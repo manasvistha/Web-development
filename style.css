@@ -1,0 +1,297 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark gray text */
+    background: #f4f4f4; /* Light gray background */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Sticky Navbar */
+/* Navbar */
+.navbar {
+    background: #eaeaea; /* Light gray background */
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    position: fixed; /* Sticks navbar to the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center; /* Align items vertically */
+}
+
+.logo {
+    display: flex; /* Align logo and name horizontally */
+    align-items: center; /* Center logo and name vertically */
+    gap: 10px; /* Add space between logo and name */
+}
+
+.logo img {
+    width: 50px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo h1 {
+    font-size: 1.5rem; /* Adjust name size */
+    color: #333; /* Dark gray text */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #555; /* Medium gray */
+}
+/* Hamburger Icon */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: #333;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f4f4f4;
+        width: 100%; /* Full width for mobile */
+        height: 0; /* Hidden by default */
+        overflow: hidden; /* Prevent links from showing */
+        padding: 0;
+    }
+
+    /* Checkbox to toggle menu */
+    .menu-toggle:checked ~ .nav-links {
+        height: auto; /* Expand links when checked */
+        padding: 1rem 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide checkbox */
+    }
+}
+
+/* Add padding to body to account for the fixed navbar height */
+body {
+    padding-top: 80px; /* Adjust based on the navbar height */
+}
+
+/* Hero Section */
+.hero {
+    background: #e0e0e0; /* Soft gray background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Dark gray text */
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    padding: 20px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #444; /* Slightly darker gray for heading */
+}
+
+
+.hero .btn {
+    background: #ccc; /* Medium gray button */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 40px; /* Moves the button further down */
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #bbb; /* Darker gray on hover */
+}
+
+
+/* Section */
+section {
+    padding: 3rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555; /* Medium gray */
+}
+
+section p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666; /* Lighter gray for paragraph text */
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 10px;
+    background: #666; /* Darker gray for progress bar */
+    border-radius: 5px;
+}
+
+/* Hobbies and Education Section */
+hobbies ul, .education ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+hobbies ul li, .education ul li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height */
+    background-color: #eaeaea; /* Light gray background */
+    color: #333; /* Dark gray text */
+    margin: 0; /* Remove any margin issues */
+    text-align: center; /* Center align text inside */
+    padding: 0; /* Remove padding to avoid offsets */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #555; /* Medium gray for heading */
+}
+
+.contact-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center; /* Ensure the text itself is centered */
+    margin: 0 auto; /* Center-aligns the content block itself */
+}
+
+.contact p {
+    margin: 10px 0; /* Uniform spacing between lines */
+}
+
+/* Footer */
+footer {
+    background: #eaeaea;
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+}
